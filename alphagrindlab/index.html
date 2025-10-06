@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alpha Grind Lab</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="login.css" />
+  <link rel="icon" href="alphalogo.png" type="image/png" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="alphalogo.png" alt="Alpha Grind Lab Logo" />
+    </div>
+    <nav>
+      <a href="#" onclick="event.preventDefault(); location.reload();">Home</a>
+      <a href="#programs">Programs</a>
+      <a href="#" onclick="openAbout()">Abouts</a>
+      <a href="#" onclick="openLogin()" class="login-link">Login</a>
+    </nav>
+  </header>
+ 
+  <section>
+    <h2>FITNESS ISN'T A HOBBY, IT'S A LIFESTYLE.</h2>
+    <p>Welcome to Alpha Grind Lab — where strength meets discipline and hustle becomes habit.</p>
+    <button class="cta" onclick="openForm()">JOIN THE GRIND</button>
+  </section>
+
+ <section class="programs-section" id="programs">
+  <h2>Our Programs</h2>
+  <div class="programs-scroll">
+    <div class="program-card">
+      <button class="program-toggle">Beginner's Strength Training</button>
+      <div class="program-description">
+        <img src="beginner.jpg" class="program-preview" alt="Beginner Program">
+        <p>This program is designed for those new to strength training. We focus on building a solid foundation by teaching proper form, technique, and gradually increasing resistance...</p>
+      </div>
+    </div>
+
+    <div class="program-card">
+      <button class="program-toggle">Advanced Strength & Power Program</button>
+      <div class="program-description">
+        <img src="advanced.jpg" class="program-preview" alt="Advanced Program">
+        <p>This program is tailored for seasoned gym-goers aiming to enhance their strength and muscle growth...</p>
+      </div>
+    </div>
+
+    <div class="program-card">
+      <button class="program-toggle">Fat Loss & Conditioning Program</button>
+      <div class="program-description">
+        <img src="fatloss.jpg" class="program-preview" alt="Fat Loss Program">
+        <p>Focused on burning fat and improving cardiovascular endurance, this program incorporates HIIT, circuit training, and cardio...</p>
+      </div>
+    </div>
+
+    <div class="program-card">
+      <button class="program-toggle">Personal Coaching</button>
+      <div class="program-description">
+        <img src="personal.jpg" class="program-preview" alt="Coaching Program">
+        <p>Get personalized attention with one-on-one coaching tailored to your specific fitness goals...</p>
+      </div>
+    </div>
+
+    <div class="program-card">
+      <button class="program-toggle">Core & Mobility Program</button>
+      <div class="program-description">
+        <img src="core.jpg" class="program-preview" alt="Core Program">
+        <p>Designed to improve flexibility, core strength, and overall mobility through yoga, Pilates, and dynamic stretching...</p>
+      </div>
+    </div>
+
+    <div class="program-card">
+      <button class="program-toggle">Sports Performance & Athletic Conditioning</button>
+      <div class="program-description">
+        <img src="sports.jpg" class="program-preview" alt="Sports Program">
+        <p>This high-intensity program is built for athletes looking to enhance speed, agility, explosiveness, and endurance...</p>
+      </div>
+    </div>
+
+    <div class="program-card">
+      <button class="program-toggle">Post-Rehabilitation & Injury Recovery Program</button>
+      <div class="program-description">
+        <img src="recovery.jpg" class="program-preview" alt="Recovery Program">
+        <p>This specialized program helps individuals safely rebuild strength and mobility after injury or physical therapy...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeForm()">&times;</span>
+      <h2>Gym Membership Sign-Up</h2>
+      <form action="signup.php" method="POST">
+  <input type="text" name="full_name" placeholder="Full Name" required />
+  <input type="email" name="email" placeholder="Email Address" required />
+  <input type="tel" name="phone_number" placeholder="Phone Number" required />
+  <input type="password" name="password" placeholder="Create Password" required />
+  <input type="password" name="confirm_password" placeholder="Confirm Password" required />
+
+  <select name="membership_type" required>
+    <option value="">Select Membership Type</option>
+    <option value="basic">One Month Gym Membership</option>
+    <option value="premium">Six Months Gym Membership</option>
+    <option value="elite">Twelve Months Gym Membership</option>
+  </select>
+
+  <textarea name="fitness_goals" placeholder="Your Fitness Goals" rows="3" required></textarea>
+  <input type="text" name="emergency_contact_name" placeholder="Emergency Contact Name" required />
+  <input type="tel" name="emergency_contact_number" placeholder="Emergency Contact Number" required />
+
+  <select name="payment_method" id="paymentMethod" required>
+    <option value="">Select Payment Method</option>
+    <option value="e-wallet">E-Wallet Payment</option>
+    <option value="offline">Offline Payment</option>
+  </select>
+
+  <div id="eWalletOptions" style="display: none;">
+    <select name="ewallet_choice" id="eWalletChoice">
+      <option value="">Choose E-Wallet Option</option>
+      <option value="gcash">GCash</option>
+      <option value="paymaya">PayMaya</option>
+    </select>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+    </div>
+  </div>
+
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeAbout()">&times;</span>
+      <h2>About</h2>
+      <p>
+        At Alpha Grind Lab, we believe fitness is more than just a workout — it’s a lifestyle. Built for those who strive to lead, push limits, and unlock their full potential, our gym is where strength meets community. Whether you’re training to build muscle, improve endurance, or transform your overall health, Alpha Grind Lab provides state-of-the-art equipment, expert coaching, and a motivating environment that fuels results.
+      </p>
+
+      <hr style="margin: 2rem 0; border-color: #444;" />
+
+      <h2>Contact Us</h2>
+<div class="contact-details">
+  <p><strong>Email:</strong> alphagrindlab@gmail.com</p>
+  <p><strong>Phone:</strong> +63 912 345 6789</p>
+  <p><strong>Facebook:</strong> 
+  <a href="https://web.facebook.com/alphagrindlabmaypajo" target="_blank">Alpha Grind Lab - Maypajo Caloocan</a></p>
+  <p><strong>Instagram:</strong> 
+  <a href="https://www.instagram.com/AlphaGrindLabMaypajoCaloocan" target="_blank">Alpha Grind Lab - Maypajo Caloocan</a></p>
+  <p><strong>Location:</strong> 237 A Mabini St, Maypajo, Caloocan, Metro Manila</p>
+</div>
+
+    </div>
+  </div>
+
+<div id="loginModal" class="modal">
+  <div class="modal-content" id="loginContent">
+    <span class="close" onclick="closeLogin()">&times;</span>
+  </div>
+</div>
+
+  <footer id="contact">
+    &copy; 2025 Alpha Grind Lab. All rights reserved.
+  </footer>
+
+   <script src="script.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
